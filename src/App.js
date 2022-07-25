@@ -72,7 +72,6 @@ export default function App() {
                 :
                 <>
                     <Questions cards={cards} setCards={setCards} />
-                    <CardBack />
                     <Footer cards={cards} count={count} />
                 </>
             }{
