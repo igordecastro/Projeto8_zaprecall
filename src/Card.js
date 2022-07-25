@@ -1,8 +1,10 @@
-export default function Card(props ,{showQuestion}) {
+import CardFront from "./CardFront"
+import ReductedCard from "./ReductedCard"
+
+export default function Card({ index, turnCard, title, clicked, front}) {
     return (
-        <div className={props.type} >
-            <p>{props.index}</p>
-            <img src="./images/arrow.svg" alt="arrow" onClick={() => showQuestion(props.index)} />
-        </div>
+        <>
+         {!clicked ? <ReductedCard title = {title} index = {index} key = {index} turnCard = {turnCard}/> : <CardFront front = {front} />}
+        </>
     )
 }

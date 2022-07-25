@@ -1,14 +1,19 @@
+import React from "react";
 import Card from "./Card";
-import CardFront from "./CardFront";
 
-export default function Questions({cards, count}) {
-
-
-    function showQuestion(i) {
-        cards(i).type = "question-2 card";
-        <CardFront question={cards[i].question}/>
-        console.log=(i);
-    } 
+export default function Questions({cards, setCards}) {
+    function turnCard (i) {
+        
+        let showedCards = cards.map((card, index) => {
+            if (index === i) {
+                return {
+                    ...card,
+                    clicked: true
+                }
+            } else return {...card, clicked: false};
+        })
+        setCards([...showedCards]);
+    }
 
     return (
         <div className="questions">
@@ -16,10 +21,7 @@ export default function Questions({cards, count}) {
                 <img src="./images/Logo - Peq.svg" alt="Logo" />
                 <h1>ZapRecall</h1>
             </div>
-            {cards.map(card => <Card type={card.type} index={card.index} image={card.image} showQuestion={showQuestion} />)}
-            <div className="finished">
-                <p>{`${count}/${cards.length}`} CONCLUÍDOS</p>
-            </div>
+            {cards.map((card, index) => <Card front = {cards.front} key = {index} clicked = {card.clicked} index = {index} title={card.cardTitle}  turnCard={turnCard}/>)}
         </div>
     );
 }

@@ -1,11 +1,11 @@
-export default function CardBack(props) {
+export default function CardBack({back}) {
     return (
         <div className="question-3 card">
-            <p>{props.answer}</p>
+            <p>{back}</p>
             <div className="buttons">
-                <button className="red" onClick={incorrectAnswer}>Não lembrei</button>
-                <button className="orange" onClick={regularAnswer}>Quase não lembrei</button>
-                <button className="green" onClick={correctAnswer}>Zap!</button>
+                <button className="red">Não lembrei</button>
+                <button className="orange">Quase não lembrei</button>
+                <button className="green">Zap!</button>
             </div>
         </div>
     )

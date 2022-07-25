@@ -49,7 +49,7 @@ html {
 }
 
 .card {
-    margin: 0 auto 25px auto;
+    margin: 25px auto;
     background-color: #FFFFD4;
     display: flex;
     flex-direction: column;
@@ -61,6 +61,11 @@ html {
     border-radius: 5px;
     font-family: 'Recursive';
     flex-wrap: wrap;
+}
+
+.card:last-child,
+.question-1:last-child {
+    margin-bottom: 85px;
 }
 
 .question-1 {
@@ -130,7 +135,7 @@ html {
     margin-top: 58px;
 }
 
-.finished {
+footer {
     position: fixed;
     bottom: 0;
     left: 0;

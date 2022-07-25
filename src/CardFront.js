@@ -1,7 +1,8 @@
-export default function CardFront(props) {
+export default function CardFront({ front }) {
     return( 
-        <div className="question-2 card">
-          <p>{props.question}</p>
+        <div className="card">
+          {console.log(front)}
+          <p>{front}</p>
           <img src="./images/Vector.svg" alt="turn" />
         </div>)
 }
